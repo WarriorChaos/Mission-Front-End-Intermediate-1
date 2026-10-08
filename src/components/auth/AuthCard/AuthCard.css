@@ -1,0 +1,60 @@
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+  padding: var(--spacing-lg);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 590px;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-5xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5xl);
+}
+
+/* Desktop responsive */
+@media (max-width: 1024px) {
+  .auth-card {
+    max-width: 520px;
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: var(--spacing-lg);
+    min-height: auto;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .auth-card {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--spacing-2xl);
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: var(--spacing-md);
+    min-height: 100vh;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-xl);
+  }
+}
