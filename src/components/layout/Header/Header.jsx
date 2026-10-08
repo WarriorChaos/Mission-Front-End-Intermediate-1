@@ -4,7 +4,7 @@ import { useAuth } from '../../../contexts/useAuth';
 import './Header.css';
 import logo from '../../../assets/videobelajar-logo.svg';
 
-export default function Header() {
+export default function Header({ logoOnly = false }) {
   const { user, isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,13 +41,13 @@ export default function Header() {
   );
 
   return (
-    <header className="header">
+    <header className={`header ${logoOnly ? 'header--logo-only' : ''}`}>
       <div className="header-container">
         <div className="header-content">
           <Link to={isAuthenticated ? '/' : '/login'} className="header-logo" aria-label="Videobelajar, beranda">
             <img src={logo} alt="Videobelajar" />
           </Link>
-          <nav className="header-nav header-nav-desktop" aria-label="Navigasi utama">
+          {!logoOnly && <nav className="header-nav header-nav-desktop" aria-label="Navigasi utama">
             {isAuthenticated ? (
               <>
                 <a href="#courses" className="header-link">Kategori</a>
@@ -75,9 +75,9 @@ export default function Header() {
                 <Link to="/register" className="header-link">Daftar</Link>
               </>
             )}
-          </nav>
+          </nav>}
 
-          {isAuthenticated && (
+          {!logoOnly && isAuthenticated && (
             <button
               type="button"
               className={`header-menu-toggle ${menuOpen ? 'is-open' : ''}`}
@@ -93,7 +93,7 @@ export default function Header() {
           )}
         </div>
 
-        {isAuthenticated && menuOpen && (
+        {!logoOnly && isAuthenticated && menuOpen && (
           <nav className="header-mobile-menu" id="mobile-account-menu" aria-label="Menu akun">
             <a href="#courses" className="header-menu-item" onClick={closeMenu}>Kategori</a>
             {menuItems}

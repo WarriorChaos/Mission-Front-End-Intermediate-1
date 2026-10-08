@@ -45,9 +45,9 @@ export default function LoginPage() {
 
   return (
     <>
-    <Header />
+    <Header logoOnly />
     <div className="login-page">
-      <AuthCard>
+      <AuthCard className="auth-page-container auth-login-container">
         <div className="auth-header">
           <h1 className="auth-title">Masuk ke Akun</h1>
           <p className="auth-subtitle">Yuk, lanjutin belajarmu di videobelajar.</p>

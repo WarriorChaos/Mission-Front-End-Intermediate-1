@@ -70,9 +70,9 @@ export default function RegisterPage() {
 
   return (
     <>
-    <Header />
+    <Header logoOnly />
     <div className="register-page">
-      <AuthCard>
+      <AuthCard className="auth-page-container">
         <div className="auth-header">
           <h1 className="auth-title">Pendaftaran Akun</h1>
           <p className="auth-subtitle">Yuk, daftarkan akunmu sekarang juga!</p>

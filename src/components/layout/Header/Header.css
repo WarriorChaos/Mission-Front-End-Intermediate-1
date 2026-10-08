@@ -20,6 +20,16 @@
   min-height: 59px;
 }
 
+.header--logo-only .header-content {
+  justify-content: flex-start;
+}
+
+.header--logo-only .header-logo img {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
 .header-logo {
   text-decoration: none;
   display: flex;
@@ -151,6 +161,14 @@
   .header-content {
     min-height: 82px;
     padding: 0 24px;
+  }
+
+  .header--logo-only .header-content {
+    min-height: 70px;
+  }
+
+  .header--logo-only .header-logo img {
+    width: 156px;
   }
 
 
